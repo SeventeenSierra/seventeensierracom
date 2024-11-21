@@ -47,7 +47,7 @@
 .freeBox__qWwI9 > :global(.__wab_flex-container) {
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   min-width: 0;
   margin-left: calc(0px - var(--token-J6IBdeDYMYdm));
   width: calc(100% + var(--token-J6IBdeDYMYdm));
