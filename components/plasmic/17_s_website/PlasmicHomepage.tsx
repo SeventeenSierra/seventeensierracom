@@ -315,12 +315,12 @@ function PlasmicHomepage__RenderFunc(props: {
                           {
                             title: "Visual Software Development",
                             content:
-                              "We provide high-level advisory and leadership services, including security strategy creation, virtual CISO solutions, and executive communication support, to help your organization thrive in an ever-changing landscape."
+                              "I design and develop stunning, high-performance websites and applications tailored to your needs. From prototypes to scalable solutions, I deliver intuitive designs that engage users and elevate your digital presence."
                           },
                           {
                             title: "Project Management",
                             content:
-                              "We enhance communication and training through tailored strategies, internal compliance programs, and toolkits designed to foster awareness, trust, and effective engagement with clients and teams."
+                              "We deliver expert project management services that align goals, streamline workflows, and ensure successful execution. Our approach keeps your projects on time, within budget, and focused on results."
                           }
                         ]
                       }
@@ -333,8 +333,8 @@ function PlasmicHomepage__RenderFunc(props: {
                       stats: [
                         {
                           display: "one",
-                          stat: "189",
-                          descriptoin: "Services Offered"
+                          stat: "4",
+                          descriptoin: "Delivery Models"
                         },
                         {
                           display: "two",
@@ -699,43 +699,57 @@ function PlasmicHomepage__RenderFunc(props: {
                               }
                             </h1>
                           </Stack__>
-                          <Stack__
-                            as={"div"}
-                            hasGap={true}
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__yxSw
-                            )}
-                          >
-                            <SiteButton
+                          {(() => {
+                            try {
+                              return $state.featureFlag;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })() ? (
+                            <Stack__
+                              as={"div"}
+                              hasGap={true}
                               className={classNames(
-                                "__wab_instance",
-                                sty.siteButton___7DtLh
+                                projectcss.all,
+                                sty.freeBox__yxSw
                               )}
-                              endIcon={
-                                <Icon38Icon
-                                  className={classNames(
-                                    projectcss.all,
-                                    sty.svg__nczi
-                                  )}
-                                  role={"img"}
-                                />
-                              }
-                              shape={"rounded"}
-                              startIcon={
-                                <CheckSvgIcon
-                                  className={classNames(
-                                    projectcss.all,
-                                    sty.svg__bB1Mw
-                                  )}
-                                  role={"img"}
-                                />
-                              }
-                              submitsForm={true}
                             >
-                              {"Get a Free Consultation"}
-                            </SiteButton>
-                          </Stack__>
+                              <SiteButton
+                                className={classNames(
+                                  "__wab_instance",
+                                  sty.siteButton___7DtLh
+                                )}
+                                endIcon={
+                                  <Icon38Icon
+                                    className={classNames(
+                                      projectcss.all,
+                                      sty.svg__nczi
+                                    )}
+                                    role={"img"}
+                                  />
+                                }
+                                shape={"rounded"}
+                                startIcon={
+                                  <CheckSvgIcon
+                                    className={classNames(
+                                      projectcss.all,
+                                      sty.svg__bB1Mw
+                                    )}
+                                    role={"img"}
+                                  />
+                                }
+                                submitsForm={true}
+                              >
+                                {"Get a Free Consultation"}
+                              </SiteButton>
+                            </Stack__>
+                          ) : null}
                         </Stack__>
                         <div
                           className={classNames(
@@ -1733,7 +1747,7 @@ function PlasmicHomepage__RenderFunc(props: {
                               "__wab_instance",
                               sty.industryCard
                             )}
-                            industryCardContent={`Orci commodo maecenas fringilla ad nec amet tempus mattis platea eget tortor sit dolor etiam a ullamcorper varius.${currentItem.content}`}
+                            industryCardContent={`${currentItem.content}${currentItem.content}`}
                             industryCardTitle={(() => {
                               try {
                                 return currentItem.title;
