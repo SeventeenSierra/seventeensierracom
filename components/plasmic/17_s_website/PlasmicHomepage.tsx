@@ -1703,7 +1703,7 @@ function PlasmicHomepage__RenderFunc(props: {
                       <React.Fragment>
                         {(() => {
                           try {
-                            return $ctx.pageContent.ourServices[0].title;
+                            return $ctx.pageContent.ourIndustries.title;
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
